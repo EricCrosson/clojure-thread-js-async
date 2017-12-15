@@ -5,7 +5,7 @@ Might be useful for testing React/Redux reducer.
 
 ## Usage
 
-```
+```javascript
 const thread = require('clojure-thread-js')
 
 // first
