@@ -39,7 +39,7 @@ const state = thread.first(
   [reducer, {type: "INC"}],  
 )
 
-console.log(state.count == 1)
+console.log(state == 1)
 ```
 
 ## License
