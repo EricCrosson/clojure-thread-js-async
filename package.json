@@ -1,6 +1,6 @@
 {
   "name": "clojure-thread",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Clojure thread macro in JS",
   "main": "index.js",
   "scripts": {
@@ -13,7 +13,9 @@
   "keywords": [
     "Clojure",
     "thread",
-    "macro"
+    "macro",
+    "redux",
+    "React"
   ],
   "author": "tsk.nakamura@gmail.com",
   "license": "MIT",
