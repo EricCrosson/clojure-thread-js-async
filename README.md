@@ -26,7 +26,8 @@ thread.last(
 
 // as
 // returns -8
-// second argument must be a function that takes a placeholder as input and
+// second argument must be a function that
+// takes a placeholder as input and
 // returns an array of functions or arrays
 thread.as(
   1,

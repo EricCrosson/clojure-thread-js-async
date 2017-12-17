@@ -1,6 +1,6 @@
 {
   "name": "clojure-thread",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Clojure thread macro in JS",
   "main": "index.js",
   "scripts": {
