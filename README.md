@@ -1,7 +1,7 @@
 # clojure-thread-js
 
-Clojure threading macro. Supports first and last macro (-> , ->>). No support for binding.
-Might be useful for testing React/Redux reducer.
+Clojure threading macro. Supports first, last, and as macro. No support for binding.
+Might be useful for testing React / Redux reducer.
 
 ## Usage
 
@@ -22,6 +22,19 @@ thread.last(
   1,
   x => x * 10,
   [(x, y) => x - y, 1]
+)
+
+// as
+// returns -8
+// second argument must be a function that takes a placeholder as input and
+// returns an array of functions or arrays
+thread.as(
+  1,
+  placeholder => [
+    x => x * 10,
+    [(x, y) => x - y, placeholder, 1],
+    [(x, y) => x - y, 1, placeholder]
+  ]
 )
 
 // React Redux reducer
