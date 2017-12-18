@@ -9,7 +9,7 @@ function first(value, ...args) {
     else {
       throw new Error(
         `Invalid Argument: type ${typeof arg} passed to thread.first\n
-         Expected either function or array`
+         Expected either a function or an array`
       )
     }
   }, value)
@@ -26,43 +26,42 @@ function last(value, ...args) {
     else {
       throw new Error(
         `Invalid Argument: type ${typeof arg} passed to thread.last\n
-         Expected either function or array`
+         Expected either a function or an array`
       )
     }
   }, value)
 }
 
 function as(value, f) {
-  let ref = {value}
+  let ref = {}
   const args = f(ref)
 
-  return args.reduce((ref, arg) => {
+  return args.reduce((val, arg) => {
     if (Array.isArray(arg)) {
       if (!arg.slice(1).find(v => v === ref)) {
         throw new Error(
-          `Missing Argument: thread.as was given an array
-           Expected the placeholder to be present as a function parameter`
+          `Missing Argument: thread.as was given an array and
+           expected the placeholder to be present as a function parameter
+           but none was found`
         )
       }
 
-      ref.value = arg[0](
+      return arg[0](
         ...arg.slice(1).map(v => {
-          return v === ref ? ref.value : v
+          return v === ref ? val : v
         })
       )
     }
     else if (typeof arg === "function") {
-      ref.value = arg(ref.value)
+      return arg(val)
     }
     else {
       throw new Error(
         `Invalid Argument: type ${typeof arg} passed to thread.as\n
-         Expected either function or array`
+         Expected either a function or an array`
       )
     }
-
-    return ref
-  }, ref).value
+  }, value)
 }
 
 module.exports = {
