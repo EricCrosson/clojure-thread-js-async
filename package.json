@@ -1,5 +1,5 @@
 {
-  "name": "clojure-thread",
+  "name": "clojure-thread-async",
   "version": "1.0.0",
   "description": "Clojure thread macro in JS",
   "main": "index.js",
