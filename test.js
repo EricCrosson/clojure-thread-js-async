@@ -1,8 +1,8 @@
 const thread = require('./index')
 
-test('first', () => {
+test('first', async () => {
   expect(
-    thread.first(
+    await thread.first(
       10,
       x => x * 10,
       [(x, y) => x - y, 10],
@@ -10,9 +10,9 @@ test('first', () => {
   ).toBe(90)
 })
 
-test('last', () => {
+test('last', async () => {
   expect(
-    thread.last(
+    await thread.last(
       10,
       x => x * 10,
       [(x, y) => x - y, 10],
@@ -20,9 +20,9 @@ test('last', () => {
   ).toBe(-90)
 })
 
-test('as', () => {
+test('as', async () => {
   expect(
-    thread.as(
+    await thread.as(
       10,
       v => [
         x => x * 10,

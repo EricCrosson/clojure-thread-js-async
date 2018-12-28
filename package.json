@@ -8,21 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/t4sk/clojure-thread-js.git"
+    "url": "git+https://github.com/EricCrosson/clojure-thread-js-async.git"
   },
   "keywords": [
     "Clojure",
     "thread",
-    "macro",
-    "redux",
-    "React"
+    "macro"
   ],
   "author": "tsk.nakamura@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/t4sk/clojure-thread-js/issues"
+    "url": "https://github.com/EricCrosson/clojure-thread-js/issues"
   },
-  "homepage": "https://github.com/t4sk/clojure-thread-js#readme",
+  "homepage": "https://github.com/EricCrosson/clojure-thread-js#readme",
   "devDependencies": {
     "jest": "^21.2.1"
   }

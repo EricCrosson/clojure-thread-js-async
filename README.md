@@ -1,16 +1,16 @@
-# clojure-thread-js
+# clojure-thread-js-async
 
-Clojure threading macro. Supports first, last, and as macro. No support for binding.
-Might be useful for testing React / Redux reducer.
+Clojure threading macro. Supports `first`, `last`, and `as` macro. No
+support for binding.
 
 ## Usage
 
 ```javascript
-const thread = require('clojure-thread')
+const thread = require('clojure-thread-async')
 
 // first
 // returns 9
-thread.first(
+await thread.first(
   1,
   x => x * 10,
   [(x, y) => x - y, 1]
@@ -18,7 +18,7 @@ thread.first(
 
 // last
 // returns -9
-thread.last(
+await thread.last(
   1,
   x => x * 10,
   [(x, y) => x - y, 1]
@@ -30,7 +30,7 @@ thread.last(
 // takes a placeholder as input (which is just
 // an empty object) and
 // returns an array of functions or arrays
-thread.as(
+await thread.as(
   1,
   placeholder => [
     x => x * 10,
@@ -46,17 +46,13 @@ const reducer = (state = 0, action) => {
       return state + 1
     default:
       return state
-  }  
+  }
 }
 
 const state = thread.first(
   reducer(undefined, {}),
-  [reducer, {type: "INC"}],  
+  [reducer, {type: "INC"}],
 )
 
 console.log(state == 1)
 ```
-
-## License
-
-MIT
